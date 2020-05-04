@@ -81,7 +81,24 @@ class _MoreState extends State<More> {
                           child: Chip(
                             padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                             backgroundColor: Colors.amberAccent,
-                            label: Text(more.priceBtc),
+                            label: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                Text(
+                                  more.priceBtc,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Text(
+                                  'BTC',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -122,10 +139,8 @@ class _MoreState extends State<More> {
                         oneS == 1 ? Colors.redAccent : Colors.green,
                     padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
                     label: Text(
-                      more.percentChange1h,
-                      style: TextStyle(
-                        color:Colors.black
-                      ),
+                      '${more.percentChange1h}%',
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
@@ -139,7 +154,7 @@ class _MoreState extends State<More> {
                 Chip(
                   backgroundColor: twS == 1 ? Colors.redAccent : Colors.green,
                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                  label: Text(more.percentChange24h),
+                  label: Text('${more.percentChange24h}%'),
                 ),
                 Text(
                   'Percentage Change in 7 Days',
@@ -151,7 +166,7 @@ class _MoreState extends State<More> {
                 Chip(
                   backgroundColor: sdS == 1 ? Colors.redAccent : Colors.green,
                   padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-                  label: Text(more.percentChange7d),
+                  label: Text('${more.percentChange7d}%'),
                 ),
               ],
             ),
